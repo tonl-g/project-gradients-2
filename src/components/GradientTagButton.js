@@ -1,3 +1,14 @@
+/* // src/components/Gradient/GradientTagButton.js
+import { useContext } from "react"
+import { FilterContext } from "../context/FilterContext"
+
+const GradientTagButton = ({ tag }) => {
+  const { filter, setFilter } = useContext(FilterContext)
+  // comme avant
+}
+
+export default GradientTagButton */
+
 import React from "react"
 
 const GradientTagButton = ({ tag, filter, setFilter }) => {
@@ -14,4 +25,4 @@ const GradientTagButton = ({ tag, filter, setFilter }) => {
   )
 }
 
-export default GradientTagButton
+export default GradientTagButton 
