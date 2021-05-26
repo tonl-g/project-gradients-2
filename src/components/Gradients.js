@@ -6,6 +6,7 @@ import GradientsSelect from './GradientsSelect'
 import { gradientsReducer } from '../reducers/gradientsReducer'
 //import { useIsMounted } from '../hooks/useIsMounted'
 
+/* eslint-disable */
 const Gradients = () => {
   
   // Etat initial du state
@@ -17,7 +18,7 @@ const Gradients = () => {
   }
   // Variable concernant le rendu
   const [state, dispatch] = useReducer(gradientsReducer, initialState)
-  const [filter, setFilter] = useState('all')
+  // const [filter, setFilter] = useState('all')
   const [gradients, setGradients] = useState([])
   // const { gradientsDispatch } = useGradient() 
   // Extraction des variables du useReducer
