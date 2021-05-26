@@ -2,6 +2,7 @@ import GradientTitle from './GradientTitle'
 import GradientPill from './GradientPill'
 import GradientCode from './GradientCode'
 import GradientTags from './GradientTags'
+import GradientFullscreenButton from './GradientFullscreenButton'
 
 const Gradient = ({ colorStart, colorEnd, name, tags, filter, setFilter }) => {
   return (
@@ -11,9 +12,10 @@ const Gradient = ({ colorStart, colorEnd, name, tags, filter, setFilter }) => {
         <GradientTitle>{name}</GradientTitle>
         <GradientCode colorStart={colorStart} colorEnd={colorEnd} />
         <GradientTags tags={tags} filter={filter} setFilter={setFilter} />
+        <GradientFullscreenButton /*  Need Router pour ID */ />
       </div>
     </li>
   )
 }
 
-export default Gradient 
+export default Gradient
