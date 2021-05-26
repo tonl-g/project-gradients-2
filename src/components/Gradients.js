@@ -19,7 +19,7 @@ const Gradients = () => {
   const [state, dispatch] = useReducer(gradientsReducer, initialState)
   const [filter, setFilter] = useState('all')
   const [gradients, setGradients] = useState([])
-  // const { gradientsDispatch } = useGradient() //
+  // const { gradientsDispatch } = useGradient() 
   // Extraction des variables du useReducer
    const { data, loading, error } = state
 
