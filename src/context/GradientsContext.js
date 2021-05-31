@@ -1,25 +1,45 @@
-// src/context/FilterContext.js
-import { useState, createContext, useContext } from 'react'
+import { createContext, useReducer, useEffect } from 'react'
+import { gradientsReducer } from '../reducers/gradientsReducer'
 
-// créer et exporter ("named") FilterContext object
 export const GradientsContext = createContext()
 
-export const useGradients = () => {
-    const context = useContext(GradientsContext)
-    if (context === undefined) {
-      throw new Error(
-        `It seems that you are trying to use GradientContext outside of its provider`
-      )
-    }
-    return context
-  }
-
-/* le component-provider qui embrassera la partie de notre app où on utilise ce context */
 export const GradientsContextProvider = ({ children }) => {
-  const [gradients, setGradients] = useState([])
+  const URL = 'https://gradients-api.herokuapp.com/gradients'
+  const [state, dispatch] = useReducer(gradientsReducer, {
+    gradientsList: [],
+    uniqueTags: [],
+    loaded: false,
+    loading: false,
+    error: '',
+    filter: 'Tous',
+  })
+
+  useEffect(() => {
+    dispatch({ type: 'FETCH_INIT' })
+    fetch(URL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Something went wrong: ${response.statusText}`)
+        }
+        return response.json()
+      })
+      .then((result) => {
+        dispatch({ type: 'FETCH_SUCCESS', payload: result })
+      })
+      .catch((error) => {
+        dispatch({ type: 'FETCH_FAILURE', payload: error.message })
+      })
+  }, [])
+
   return (
-    <GradientsContext.Provider value={{ gradients, setGradients }}>
-      {children}
+    <GradientsContext.Provider value={{ state, dispatch }}>
+      {state.error ? (
+        <h1 className="alert alert-danger">{state.error}</h1>
+      ) : !state.loaded ? (
+        <h1>Loading...</h1>
+      ) : (
+       children
+      )}
     </GradientsContext.Provider>
   )
 }

@@ -57,3 +57,7 @@ la navigation (Accueil, Précédent, Suivant) depuis routes /gradient/:id foncti
 le bouton “Plein écran” fonctionne (/1)
 les gradients viennent depuis l’API (/1)
 il n’y a pas de warning depuis la console dans VSCode, ni dans la console du navigateur (/1)
+
+FETCH DATA HEADER OK GRADIENTSAPP OK GRADIENTSLIST OK
+FILTER CONTEXT OK 
+ROUTES
