@@ -1,13 +1,14 @@
 // src/components/GradientsSelect.js
 import { useContext } from "react"
-import { uniqueTags as tags } from "../gradients"
- import { FilterContext } from "../context/FilterContext"
+import { FilterContext } from "../context/FilterContext"
+import {GradientsContext} from "../context/GradientsContext"
 
 const GradientsSelect = () => {
   const { filter, setFilter } = useContext(FilterContext)
   const handleSelectChange = (e) => {
     setFilter(e.target.value)
   }  
+  const { state } = useContext(GradientsContext)
   // comme avant
   return (
     <div className="input-group mb-3">
@@ -21,7 +22,7 @@ const GradientsSelect = () => {
         onChange={handleSelectChange}
       >
         <option value="all">Tous</option>
-        {tags.map((el) => (
+        {state.uniqueTags.map((el) => (
           <option key={el} value={el}>
             {el}
           </option>
