@@ -60,4 +60,5 @@ il n’y a pas de warning depuis la console dans VSCode, ni dans la console du n
 
 FETCH DATA HEADER OK GRADIENTSAPP OK GRADIENTSLIST OK
 FILTER CONTEXT OK 
-ROUTES
+ROUTES OK
+FULLSCREEN OK
