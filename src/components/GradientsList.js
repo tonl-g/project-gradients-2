@@ -17,13 +17,13 @@ const GradientsList = props => {
     return ( 
     <ul className = "row list-unstyled" > {
         list.map(el => {
-          const {name, start, end,tags = []
-          } = el
+          const {name, start, end,tags = [], id} = el
           return (<Gradient key = {name}
             colorStart = {start}
             colorEnd = {end}
             name = {name}
             tags = {tags}
+            id = {id}
             />)
         })} 
       </ul>)

@@ -2,9 +2,8 @@ import GradientTitle from './GradientTitle' /*  Need Router pour ID */
 import GradientPill from './GradientPill'
 import GradientCode from './GradientCode'
 import GradientTags from './GradientTags'
-import GradientFullscreenButton from './GradientFullscreenButton'
 
-const Gradient = ({ colorStart, colorEnd, name, tags }) => {
+const Gradient = ({ colorStart, colorEnd, name, tags, id }) => {
   return (
     <li className="col-lg-3 col-md-4 col-sm-6">
       <div className="card p-3 mb-4 shadow">
@@ -12,7 +11,7 @@ const Gradient = ({ colorStart, colorEnd, name, tags }) => {
         <GradientTitle>{name}</GradientTitle>
         <GradientCode colorStart={colorStart} colorEnd={colorEnd} />
         <GradientTags tags={tags} />
-        <GradientFullscreenButton  /*  Need Router pour ID */ />
+        <a className="btn btn-outline-dark w-100" href={`/gradient/${id}`}>Plein écran</a>
       </div>
     </li>
   )
