@@ -1,6 +1,6 @@
 import GradientTagButton from "./GradientTagButton"
 
-const GradientTags = ({ tags }) => {
+const GradientTags = ({tags}) => {
   return (
     <div className="mt-3">
       {tags.sort().map((el) => {

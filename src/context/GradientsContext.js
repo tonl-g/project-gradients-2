@@ -13,7 +13,7 @@ export const GradientsContextProvider = ({ children }) => {
     error: '',
     filter: 'Tous',
   })
-
+  console.log(state)
   useEffect(() => {
     dispatch({ type: 'FETCH_INIT' })
     fetch(URL)
