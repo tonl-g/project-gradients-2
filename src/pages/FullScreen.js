@@ -4,11 +4,13 @@ import GradientCode from '../components/GradientCode'
 import Navigation from '../components/Navigation'
 import { useContext, useState } from 'react'
 import { GradientsContext } from '../context/GradientsContext'
+import { GradientsContextProvider } from '../context/GradientsContext'
 
 const FullScreen = () => {
      const { state } = useContext(GradientsContext)
 
   return (
+    <GradientsContextProvider>
     <div className='App min-vh-100 d-flex flex-column'>
       <Navigation />
       <div className='flex-fill d-flex'>
@@ -21,6 +23,7 @@ const FullScreen = () => {
       </div>  
       <Footer />
     </div>
+    </GradientsContextProvider>
   )
 }
 
