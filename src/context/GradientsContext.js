@@ -30,7 +30,7 @@ export const GradientsContextProvider = ({ children }) => {
         dispatch({ type: 'FETCH_FAILURE', payload: error.message })
       })
   }, [])
-
+  console.log(state)
   return (
     <GradientsContext.Provider value={{ state, dispatch }}>
       {state.error ? (

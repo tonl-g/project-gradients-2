@@ -1,20 +1,18 @@
 // src/App.js
 import React from "react"
-import Gradients from "./components/Gradients"
-import GradientsHeader from "./components/GradientsHeader"
-import Footer from "./components/Footer"
-import { FilterContextProvider } from "./context/FilterContext"
+import {Switch, Route} from 'react-router-dom'
+import FullScreen from "./pages/FullScreen"
+import Home from "./pages/Home"
 import { GradientsContextProvider } from "./context/GradientsContext"
-import {Switch, Route  } from 'react-router-dom'
 
 function App() {
   return (
+    <GradientsContextProvider>
     <Switch>
-      <Route exact path="/" component={Home} />
-
-      
+      <Route exact path='/' component={Home} />
+      <Route path='/gradient/:id'  component={FullScreen} />
     </Switch>
-
+    </GradientsContextProvider>
 
   )
 }
